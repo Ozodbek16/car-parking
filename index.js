@@ -4,6 +4,8 @@ const result = document.querySelector('.result');
 
 exit.disabled = true
 
+let money = 2
+
 let entTime;
 let exitTime;
 
@@ -32,8 +34,10 @@ exit.addEventListener('click', () => {
     if (minut > 0) {
         hour = hour + 1
     }
+    if (minut !== 0 || hour !== 0) {
+        money = (hour * 4) + 1
+    }
 
-    let money = (hour * 4) + 1
     let span = `
     Sizdan avtoturargohda turganinggiz uchun <span>${money}$</span> boldi.
     `
